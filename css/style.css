@@ -21,11 +21,31 @@ a {
     color: var(--accent);
 }
 
-#theme-toggle {
+#theme-toggle,
+#menu-toggle {
     padding: 0.5rem 0.75rem;
     color: inherit;
     background: transparent;
     border: 1px solid currentColor;
     border-radius: 0.25rem;
     cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 48rem) {
+    #menu-toggle {
+        display: block;
+    }
+
+    #primary-navigation {
+        display: none;
+        flex-direction: column;
+    }
+
+    #primary-navigation[data-open="true"] {
+        display: flex;
+    }
 }
